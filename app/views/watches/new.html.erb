@@ -1,6 +1,12 @@
 <h1>Add a New Watch</h1>
 
-<%= form_with(model: @watch, local: true) do |form| %>
+<%= form_with(model: @watch, local: true, html: { multipart: true }) do |form| %>
+
+  <div>
+    <%= form.label :photo, "Watch Photo" %>
+    <%= form.file_field :photo %>
+  </div>
+
   <div>
     <%= form.label :reference_number, "Reference Number" %>
     <%= form.number_field :reference_number, min: 0 %>
@@ -23,7 +29,7 @@
 
   <div>
     <%= form.label :year_of_production, "Year of Production" %>
-    <%= form.number_field :year_of_production, min: 1500 %>
+    <%= form.number_field :year_of_production, min: 0 %>
   </div>
 
   <div>

@@ -14,7 +14,7 @@ class WatchesController < ApplicationController
   
   def create
     @watch = Watch.new(watch_params)
-    
+
     if @watch.save
       redirect_to watches_path, notice: 'Watch successfully added!'
     else
@@ -42,6 +42,6 @@ class WatchesController < ApplicationController
   private
 
   def watch_params
-    params.require(:watch).permit(:brand_id, :reference_number, :model, :price, :movement, :year_of_production, :case_material, :case_diameter, :description, :bracelet)
-  end
+  params.require(:watch).permit(:reference_number, :model, :price, :movement, :year_of_production, :case_material, :case_diameter, :bracelet, :description, :brand_id, :photo)
+end
 end

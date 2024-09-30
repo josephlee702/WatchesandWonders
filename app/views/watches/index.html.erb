@@ -2,8 +2,9 @@
 <%= link_to 'Add New Watch', new_watch_path, class: 'btn btn-primary' %>
 <ul>
   <% @watches.each do |watch| %>
-    <li><u>Model</u> <%= watch.model %></li>
-    <li><u>Brand</u> <%= watch.brand.name %></li>
-    <li><u>Price</u> <%= number_to_currency(watch.price) %></li>
+    <%= image_tag watch.photo, style: "max-width: 200px; height: auto;" %>
+    <li><u>Model</u>: <%= watch.model %></li>
+    <li><u>Brand</u>: <%= watch.brand.name %></li>
+    <li><u>Price</u>: <%= number_to_currency(watch.price) %></li>
   <% end %>
 </ul>
