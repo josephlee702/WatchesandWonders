@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_09_30_222523) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_30_230449) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,7 +22,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_30_222523) do
   end
 
   create_table "watches", force: :cascade do |t|
-    t.string "brand"
     t.string "reference_number"
     t.string "model"
     t.string "movement"
@@ -34,6 +33,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_30_222523) do
     t.datetime "updated_at", null: false
     t.integer "price"
     t.string "bracelet"
+    t.integer "brand_id"
   end
 
 end
