@@ -1,4 +1,5 @@
 <h1> Watch Models </h1>
+<%= link_to 'Add New Watch', new_watch_path, class: 'btn btn-primary' %>
 <ul>
   <% @watches.each do |watch| %>
     <li><u>Model</u> <%= watch.model %></li>

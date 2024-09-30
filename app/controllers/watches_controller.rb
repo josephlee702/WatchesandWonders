@@ -7,13 +7,13 @@ class WatchesController < ApplicationController
     @watch = Watch.find(params[:watch_id])
   end 
   
-  def create
+  def new
     @watch = Watch.new(watch_params)
-
+    
     if @watch.save
       redirect_to watches_path, notice: 'Watch successfully added!'
     else
-      @brands = Brand.all  # Re-fetch brands if the form is re-rendered
+      @brands = Brand.all
       render :new
     end
   end
@@ -36,6 +36,6 @@ class WatchesController < ApplicationController
   private
 
   def watch_params
-    params.permit(:model, :bracelet, :movement, :case_material, :case_size, :crown_guard)
+    params.permit(:reference_number, :model, :price, :movement, :year_of_production, :case_material, :case_diameter, :description)
   end
 end

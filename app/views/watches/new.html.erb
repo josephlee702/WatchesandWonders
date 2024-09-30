@@ -1,0 +1,24 @@
+<h1>Add a New Watch</h1>
+
+<%= form_with(model: @watch, local: true) do |form| %>
+  <div>
+    <%= form.label :name, "Watch Name" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :price, "Price" %>
+    <%= form.number_field :price, step: 0.01 %>
+  </div>
+
+  <div>
+    <%= form.label :brand_id, "Brand" %>
+    <%= form.collection_select :brand_id, @brands, :id, :name, prompt: "Select a Brand" %>
+  </div>
+
+  <div>
+    <%= form.submit "Add Watch" %>
+  </div>
+<% end %>
+<br>
+<%= link_to 'Back to Watch List', watches_path %>
