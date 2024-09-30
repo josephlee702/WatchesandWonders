@@ -33,7 +33,7 @@
   
   <div>
     <%= form.label :case_diameter, "Case Diameter" %>
-    <%= form.number_field :case_diamete, min: 0 %>
+    <%= form.number_field :case_diameter, min: 0 %>
   </div>
 
   <div>
@@ -47,7 +47,7 @@
   </div>
 
   <div>
-    <%= form.label :brand_id, "Brand" %>
+    <%= form.label :brand, "Brand" %>
     <%= form.collection_select :brand_id, @brands, :id, :name, prompt: "Select a Brand" %>
   </div>
 
