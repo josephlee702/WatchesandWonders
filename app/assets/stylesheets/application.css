@@ -7,6 +7,9 @@
 }
 
 .watch-item {
-  margin: 10px;               
-  text-align: center;
+  margin: 10px;                
+  text-align: center;          
+  display: flex;               
+  flex-direction: column;      
+  align-items: center;     
 }
