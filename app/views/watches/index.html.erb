@@ -4,9 +4,9 @@
   <% @watches.each do |watch| %>
     <li class="watch-item">
       <%= image_tag watch.photo, style: "max-width: 200px; height: auto;" %>
-      <u>Model</u>: <%= watch.model %><br>
-      <u>Brand</u>: <%= watch.brand.name %><br>
-      <u>Price</u>: <%= number_to_currency(watch.price) %>
+      <span><u>Model</u>: <%= watch.model %></span><br>
+      <span><u>Brand</u>: <%= watch.brand.name %></span><br>
+      <span><u>Price</u>: <%= number_to_currency(watch.price) %></span>
     </li>
   <% end %>
 </ul>
