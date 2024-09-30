@@ -2,13 +2,43 @@
 
 <%= form_with(model: @watch, local: true) do |form| %>
   <div>
-    <%= form.label :name, "Watch Name" %>
+    <%= form.label :reference_number, "Reference Number" %>
+    <%= form.number_field :reference_number, min: 0 %>
+  </div>
+
+  <div>
+    <%= form.label :model, "Watch Model" %>
     <%= form.text_field :name %>
   </div>
 
   <div>
     <%= form.label :price, "Price" %>
-    <%= form.number_field :price, step: 0.01 %>
+    <%= form.number_field :price, step: 0.01, min: 0 %>
+  </div>
+
+  <div>
+    <%= form.label :movement, "Movement" %>
+    <%= form.text_field :movement %>
+  </div>
+
+  <div>
+    <%= form.label :year_of_production, "Year of Production" %>
+    <%= form.number_field :year_of_production, min: 1500 %>
+  </div>
+
+  <div>
+    <%= form.label :case_material, "Case Material" %>
+    <%= form.text_field :case_material %>
+  </div>
+  
+  <div>
+    <%= form.label :case_diameter, "Case Diameter" %>
+    <%= form.number_field :case_diamete, min: 0 %>
+  </div>
+
+  <div>
+    <%= form.label :description, "Description" %>
+    <%= form.text_field :description %>
   </div>
 
   <div>
