@@ -9,7 +9,7 @@ class WatchesController < ApplicationController
   
   def new
     @watch = Watch.new(watch_params)
-    
+    require 'pry'; binding.pry
     if @watch.save
       redirect_to watches_path, notice: 'Watch successfully added!'
     else
@@ -36,6 +36,6 @@ class WatchesController < ApplicationController
   private
 
   def watch_params
-    params.permit(:reference_number, :model, :price, :movement, :year_of_production, :case_material, :case_diameter, :description)
+    params.permit(:reference_number, :model, :price, :movement, :year_of_production, :case_material, :case_diameter, :description, :bracelet)
   end
 end

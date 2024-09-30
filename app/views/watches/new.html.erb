@@ -37,6 +37,11 @@
   </div>
 
   <div>
+    <%= form.label :bracelet, "Bracelet" %>
+    <%= form.text_field :bracelet %>
+  </div>
+
+  <div>
     <%= form.label :description, "Description" %>
     <%= form.text_field :description %>
   </div>
@@ -46,9 +51,13 @@
     <%= form.collection_select :brand_id, @brands, :id, :name, prompt: "Select a Brand" %>
   </div>
 
+  <br>
+
   <div>
     <%= form.submit "Add Watch" %>
   </div>
 <% end %>
+
 <br>
+
 <%= link_to 'Back to Watch List', watches_path %>
