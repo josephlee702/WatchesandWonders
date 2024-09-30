@@ -1,6 +1,8 @@
 <h1> Watch Models </h1>
 <ul>
   <% @watches.each do |watch| %>
+    <li><u>Model</u> <%= watch.model %></li>
     <li><u>Brand</u> <%= watch.brand %></li>
+    <li><u>Price</u> <%= number_to_currency(watch.price) %></li>
   <% end %>
 </ul>

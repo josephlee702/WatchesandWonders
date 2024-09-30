@@ -10,10 +10,6 @@ class WatchesController < ApplicationController
   def edit
     @watch = Watch.find(params[:watch_id])
   end
-
-  def watch_params
-    params.permit(:model, :bracelet, :movement, :case_material, :case_size, :crown_guard)
-  end
   
   def update
     @watch = Watch.find(params[:watch_id])
@@ -24,5 +20,11 @@ class WatchesController < ApplicationController
   def destroy
     Watch.find(params[:watch_id]).destroy
     redirect_to "/watches"
+  end
+
+  private
+
+  def watch_params
+    params.permit(:model, :bracelet, :movement, :case_material, :case_size, :crown_guard)
   end
 end
