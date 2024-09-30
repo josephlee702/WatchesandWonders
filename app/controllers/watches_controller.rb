@@ -6,18 +6,24 @@ class WatchesController < ApplicationController
   def show
     @watch = Watch.find(params[:watch_id])
   end 
-  
+
   def new
+    @watch = Watch.new
+    @brands = Brand.all
+  end
+  
+  def create
     @watch = Watch.new(watch_params)
-    require 'pry'; binding.pry
+    
     if @watch.save
       redirect_to watches_path, notice: 'Watch successfully added!'
     else
       @brands = Brand.all
+      flash.now[:notice] = "Watch was not added successfully - try again."
       render :new
     end
   end
-
+  
   def edit
     @watch = Watch.find(params[:watch_id])
   end
@@ -36,6 +42,6 @@ class WatchesController < ApplicationController
   private
 
   def watch_params
-    params.permit(:reference_number, :model, :price, :movement, :year_of_production, :case_material, :case_diameter, :description, :bracelet)
+    params.require(:watch).permit(:brand_id, :reference_number, :model, :price, :movement, :year_of_production, :case_material, :case_diameter, :description, :bracelet)
   end
 end
