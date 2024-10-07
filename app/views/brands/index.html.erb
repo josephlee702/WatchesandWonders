@@ -1,0 +1,11 @@
+<h1> Brands </h1> 
+<%# <%= link_to 'Add New Brand', new_brand_path, class: 'btn btn-primary' %> %>
+<ul class='watch-list'>
+  <% @brands.each do |brand| %>
+    <li class='brand-item'>
+      <%= image_tag brand.photo, style: 'max-width: 150px; max-height: 150px' %>
+      <span><u>Model</u>: <%= brand.name %></span><br>
+      <span><u>Brand</u>: <%= brand.country %></span><br>
+    </li>
+  <% end %>
+</ul>
