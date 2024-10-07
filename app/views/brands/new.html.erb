@@ -1,0 +1,29 @@
+<h1>Add a New Brand</h1>
+
+<%= form_with(model: @brand, local: true, html: { multipart: true }) do |form| %>
+
+  <div>
+    <%= form.label :photo, "Brand Photo" %>
+    <%= form.file_field :photo %>
+  </div>
+
+  <div>
+    <%= form.label :name, "Name" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :country, "Country" %>
+    <%= form.text_field :country %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= form.submit "Add Brand" %>
+  </div>
+<% end %>
+
+<br>
+
+<%= link_to 'Back to Brand List', brands_path %>
