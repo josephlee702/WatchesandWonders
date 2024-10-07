@@ -6,6 +6,24 @@ rolex = Brand.create!(name: 'Rolex', country: "Switzerland")
 omega = Brand.create!(name: 'Omega', country: "Switzerland")
 seiko = Brand.create!(name: 'Seiko', country: "Japan")
 
+rolex.photo.attach(
+  io: File.open(Rails.root.join('db/photos/rolex_icon.png')), 
+  filename: 'rolex_icon.png', 
+  content_type: 'image/png'
+  )
+
+omega.photo.attach(
+  io: File.open(Rails.root.join('db/photos/omega_icon.png')), 
+  filename: 'omega_icon.png', 
+  content_type: 'image/png'
+  )
+
+seiko.photo.attach(
+  io: File.open(Rails.root.join('db/photos/seiko_icon.webp')), 
+  filename: 'seiko_icon.webp', 
+  content_type: 'image/webp'
+  )
+
 #create the watches and attach photos
 watch1 = Watch.create!(
   reference_number: '126200', 
@@ -21,7 +39,7 @@ watch1 = Watch.create!(
 )
 
 watch1.photo.attach(
-  io: File.open(Rails.root.join('db/datejust.webp')), 
+  io: File.open(Rails.root.join('db/photos/datejust.webp')), 
   filename: 'datejust.webp', 
   content_type: 'image/webp'
 )
@@ -40,7 +58,7 @@ watch2 = Watch.create!(
 )
 
 watch2.photo.attach(
-  io: File.open(Rails.root.join('db/speedmaster_42mm.webp')), 
+  io: File.open(Rails.root.join('db/photos/speedmaster_42mm.webp')), 
   filename: 'speedmaster_42mm.webp', 
   content_type: 'image/webp'
 )
@@ -59,7 +77,7 @@ watch3 = Watch.create!(
 )
 
 watch3.photo.attach(
-  io: File.open(Rails.root.join('db/seiko_prospex.jpg')), 
+  io: File.open(Rails.root.join('db/photos/seiko_prospex.jpg')), 
   filename: 'seiko_prospex.jpg', 
   content_type: 'image/jpg'
 )
