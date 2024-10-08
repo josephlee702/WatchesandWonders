@@ -31,11 +31,11 @@
           <%# if statement to change view depending on logged in session or not %>
           <li class="nav-item">
             <% if current_user %>
-              <%= link_to "Log out" %>
+              <%= link_to "Log out", logout_path, method: :delete, class: "nav-link" %>
             <% else %>
               <%= link_to "Register as a User", new_user_registration_path %>
               <li>
-              <%= link_to "Log In", login_path %>
+                <%= link_to "Log In", login_path, class: "nav-link" %>
               </li>
             <% end %>
           </li>
