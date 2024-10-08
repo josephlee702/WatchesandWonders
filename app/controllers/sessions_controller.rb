@@ -15,4 +15,9 @@ class SessionsController < ApplicationController
       flash[:alert] = "User Account was not found."
     end
   end
+
+  def destroy
+    reset_session
+    redirect_to root_path, notice: "You have successfully logged out."
+  end
 end
