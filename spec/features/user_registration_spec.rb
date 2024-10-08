@@ -9,6 +9,6 @@ RSpec.feature "UserRegistration", type: :feature do
     fill_in "Confirm Password", with: "password"
     click_button "Create Account"
 
-    expect(page).to have_content("Welcome! You have signed up successfully.")
+    expect(page).to have_content("Welcome, John Doe! You have signed up successfully.")
   end
 end
