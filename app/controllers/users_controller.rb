@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def show
+    @user = User.find(session[:user_id])
+  end
+  
   def new
     @user = User.new
   end
@@ -8,6 +12,7 @@ class UsersController < ApplicationController
 
     if @user.save
       redirect_to root_path, notice: "Welcome, #{@user.full_name}! You have signed up successfully."
+      session[:user_id] = @user.id
     else
       redirect_to new_user_registration_path, notice: "Account was not created successfully. Try again."
     end
