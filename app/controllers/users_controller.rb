@@ -9,8 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_path, notice: "Welcome! You have signed up successfully."
     else
-      flash.now[:notice] = "Account was not created successfully. Try again."
-      render root_path
+      redirect_to new_user_registration_path, notice: "Account was not created successfully. Try again."
     end
   end
 
