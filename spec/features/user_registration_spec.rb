@@ -1,4 +1,3 @@
-# spec/features/user_registration_spec.rb
 require 'rails_helper'
 
 RSpec.feature "UserRegistration", type: :feature do
