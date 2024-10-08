@@ -31,3 +31,27 @@ RSpec.feature "UserRegistration", type: :feature do
     expect(page).to have_content("Welcome, #{full_name}! You have signed up successfully.")
   end
 end
+
+RSpec.describe "Logging In" do
+  it "can log in with valid credentials" do
+    user = User.create(full_name: "Joseph Lee", email_address: "jhjlee702@gmail.com", password_digest: "test")
+
+    visit "/"
+
+    click_link "Log In"
+
+    expect(current_path).to eq('/login')
+
+    fill_in :email_address, with: user.email_address
+    fill_in :password, with: user.password
+
+    click_button "Log In"
+
+    expect(current_path).to eq('/')
+
+    expect(page).to have_content("Welcome, #{user.full_name}")
+    expect(page).to have_link("Log out")
+    expect(page).to_not have_link("Register as a User")
+    expect(page).to_not have_link("I already have an account")
+  end
+end
