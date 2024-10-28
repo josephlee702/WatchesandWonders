@@ -8,8 +8,7 @@ class SessionsController < ApplicationController
 
     if @user
       session[:user_id] = @user.id
-      flash[:success] = "Welcome, #{@user.full_name}!"
-      redirect_to root_path
+      redirect_to profile_path
     else
       redirect_to login_path
       flash[:alert] = "User Account was not found."
