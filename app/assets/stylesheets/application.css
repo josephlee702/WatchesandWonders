@@ -1,6 +1,10 @@
+@import "about";
+
 .header {
   background-color: rgb(219, 216, 216);
   padding: 10px 20px;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
 }
 
 html, body {
@@ -8,6 +12,7 @@ html, body {
   margin: 0;
   display: flex;
   flex-direction: column;
+  min-height: 100vh; /* Ensures full viewport height */
 }
 
 .navbar-nav {
@@ -44,10 +49,8 @@ html, body {
 
 .footer {
   position: sticky;
-  bottom: 0;
-  width: 100%;
-  background-color: #f8f9fa;
-  padding: 1em 0;
+  background-color: rgb(219, 216, 216);
   text-align: center;
   margin-top: auto;
+  border-top: 1px solid #ddd;
 }
