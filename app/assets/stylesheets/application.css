@@ -1,3 +1,4 @@
+/* imports stylesheets to have application.css be the sole entry point for styling */
 @import "about";
 
 .header {
