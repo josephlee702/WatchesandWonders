@@ -28,6 +28,9 @@
           <li class="nav-item">
             <%= link_to 'Add New Brand', new_brand_path, class: "nav-link" %>
           </li>
+          <li class="nav-item">
+            <%= link_to 'About', about_path, class: "nav-link" %>
+          </li>
           <%# if statement to change view depending on logged in session or not %>
           <li class="nav-item">
             <% if current_user %>
