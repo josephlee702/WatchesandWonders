@@ -6,12 +6,15 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by(email_address: params[:email_address])
 
-    if @user
+    if @user&.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect_to profile_path
-    else
+    elsif !@user
       redirect_to login_path
       flash[:alert] = "User Account was not found."
+    else
+      redirect_to login_path
+      flash[:alert] = "Account was found, but password was incorrect."
     end
   end
 
