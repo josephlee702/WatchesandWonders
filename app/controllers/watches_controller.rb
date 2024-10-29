@@ -1,6 +1,14 @@
 class WatchesController < ApplicationController
   def index
     @watches = Watch.all
+    #API seems to be under maintenence...reached out to see if it will be up anytime soon.
+    # api_client = WatchApiClient.new
+    # @data = api_client.fetch_watches
+    # require 'pry'; binding.pry
+
+    # if @watches[:error]
+    #   flash[:error] = "Error fetching data: #{@watches[:message]}"
+    # end
   end
 
   def show
