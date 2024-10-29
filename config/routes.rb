@@ -17,8 +17,8 @@ Rails.application.routes.draw do
 
   get '/users/new', to: 'users#new', as: 'new_user_registration'
   post '/users', to: 'users#create'
-
-  get '/users/profile', to: 'users#show', as: 'profile'
+  get '/users', to: 'users#destroy', as: 'user_destroy'
+  get '/users/:user_id/profile', to: 'users#show', as: 'profile'
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
