@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
     if @user&.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to profile_path
+      redirect_to profile_path(@user.id)
     elsif !@user
       redirect_to login_path
       flash[:alert] = "User Account was not found."
