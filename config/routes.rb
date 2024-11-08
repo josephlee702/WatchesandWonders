@@ -15,14 +15,14 @@ Rails.application.routes.draw do
   get '/watches/new', to: 'watches#new', as: 'new_watch'
   post '/watches', to: 'watches#create'
 
-  get '/users/new', to: 'users#new', as: 'new_user_registration'
-  post '/users', to: 'users#create'
-  get '/users', to: 'users#destroy', as: 'user_destroy'
-  get '/users/:user_id/profile', to: 'users#show', as: 'profile'
+  resources :users, only: [:new, :create, :show, :destroy] do
+    resources :watches, only: [:create, :destroy]
+  end
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
   get '/about', to: 'static_pages#about'
+
 end
