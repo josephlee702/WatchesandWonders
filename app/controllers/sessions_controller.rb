@@ -10,10 +10,10 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path(@user.id)
     elsif !@user
-      redirect_to new_user_path
+      redirect_to login_path
       flash[:alert] = "User Account was not found."
     else
-      redirect_to new_user_path
+      redirect_to login_path
       flash[:alert] = "Account was found, but password was incorrect."
     end
   end
