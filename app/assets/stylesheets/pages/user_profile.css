@@ -14,4 +14,9 @@
 
 .my-watches, .my-wishlist {
   flex: 1;
+  margin-bottom: 300px;
+}
+
+.account-footer {
+  display: flex;
 }
