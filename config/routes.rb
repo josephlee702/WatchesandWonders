@@ -15,9 +15,11 @@ Rails.application.routes.draw do
   get '/watches/new', to: 'watches#new', as: 'new_watch'
   post '/watches', to: 'watches#create'
 
-  resources :users, only: [:new, :create, :show, :destroy] do
+  resources :users, only: [:new, :create, :show] do
     resources :watches, only: [:create, :destroy]
   end
+
+  get '/users', to: "users#destroy", as: 'destroy_user'
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
