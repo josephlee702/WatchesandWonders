@@ -1,5 +1,6 @@
 /* imports stylesheets to have application.css be the sole entry point for styling */
-@import "about";
+@import "pages/about";
+@import "pages/user_profile";
 
 .header {
   background-color: rgb(219, 216, 216);
