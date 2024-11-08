@@ -1,0 +1,32 @@
+.brand-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.brand-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.brand-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.brand-description {
+  text-align: center;
+  padding: 10px;
+  margin-top: auto;
+}

@@ -1,6 +1,8 @@
 /* imports stylesheets to have application.css be the sole entry point for styling */
 @import "pages/about";
 @import "pages/user_profile";
+@import "pages/watch_index.css";
+@import "pages/brand_index.css";
 
 .header {
   background-color: rgb(219, 216, 216);
@@ -25,71 +27,6 @@ html, body {
   margin-right: 15px;
 }
 
-.watch-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
-}
-
-.watch-item {
-  display: flex;   
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.watch-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
-
-.watch-image img {
-  max-width: 100%;
-  height: auto;
-}
-
-.watch-description {
-  text-align: center;
-  padding: 10px;
-  margin-top: auto;
-}
-
-.brand-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
-}
-
-.brand-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.brand-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
-
-.brand-image img {
-  max-width: 100%;
-  height: auto;
-}
-
-.brand-description {
-  text-align: center;
-  padding: 10px;
-  margin-top: auto;
-}
 
 .footer {
   display: flex;
