@@ -26,19 +26,36 @@ html, body {
 }
 
 .watch-list {
-  display: flex;               
-  flex-wrap: wrap;           
-  list-style-type: none;      
-  padding: 0;                 
-  margin: 0;                  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
 }
 
 .watch-item {
   display: flex;   
-  margin: 10px;
-  text-align: center;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+}
+
+.watch-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.watch-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.watch-description {
+  text-align: center;
+  padding: 10px;
+  margin-top: auto;
 }
 
 .brand-list {
