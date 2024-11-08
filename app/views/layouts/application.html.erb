@@ -28,9 +28,6 @@
           <li class="nav-item">
             <%= link_to 'Add New Brand', new_brand_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
-            <%= link_to 'About', about_path, class: "nav-link" %>
-          </li>
           <%# if statement to change view depending on logged in session or not %>
           <% if current_user %>
             <li class="nav-item">
@@ -61,8 +58,13 @@
   </div>
 
   <footer class="footer">
-    <div class="container">
-      <span class="text-muted">© 2024 My Watch Catalog</span>
+    <div class="footer-content">
+      <ul class="footer-nav">
+        <li class="footer-item">
+          <%= link_to 'About', about_path %>
+        </li>
+      </ul>
+      <div class="text-muted">© 2024 WatchesAndWonders</div>
     </div>
   </footer>
 </body>
