@@ -1,0 +1,17 @@
+.user-profile-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.divider {
+  border-left: 1px solid #ccc;
+  height: auto; 
+  align-self: stretch;
+  margin: 0 20px;
+}
+
+.my-watches, .my-wishlist {
+  flex: 1;
+}
