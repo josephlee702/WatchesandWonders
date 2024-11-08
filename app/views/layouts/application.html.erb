@@ -34,11 +34,11 @@
               <%= link_to "Log out", logout_path, method: :delete, class: "nav-link" %>
             </li>
             <li class="nav-item">
-              <%= link_to "My Profile", profile_path(current_user.id) %>
+              <%= link_to "My Profile", user_path(current_user.id) %>
             </li>
           <% else %>
             <li class="nav-item">
-              <%= link_to "Register as a User", new_user_registration_path %>
+              <%= link_to "Register as a User", new_user_path %>
             </li>
             <li class="nav-item">
               <%= link_to "Log In", login_path, class: "nav-link" %>
