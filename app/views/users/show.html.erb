@@ -1,3 +1,15 @@
 <h1> Hello, <%= current_user.full_name %>! </h1>
 
-<%= link_to "Delete my account permanently.", user_destroy_path, method: :delete%>
+<div class="user-profile-container">
+  <div class="my-watches">
+    <%= link_to "My Watches"%>
+  </div>
+  
+  <div class="divider"></div>
+  
+  <div class="my-wishlist">
+    <%= link_to "My Wishlist"%>
+  </div>
+</div>
+
+<%= link_to "Delete my account permanently.", user_destroy_path, method: :delete %>
