@@ -12,4 +12,4 @@
   </div>
 </div>
 
- <%= link_to "Delete my account permanently.", user_destroy_path, method: :delete %>
+ <%= link_to "Delete my account permanently.", destroy_user_path, data: { confirm: 'Are you sure you want to delete your account?' } %>
