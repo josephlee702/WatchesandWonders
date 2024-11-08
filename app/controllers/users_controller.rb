@@ -21,8 +21,9 @@ class UsersController < ApplicationController
 
   def destroy
     current_user = User.find(session[:user_id])
-    current_user.delete
-    redirect_to root_path
+    current_user.destroy
+    session[:user_id] = nil
+    redirect_to root_path, notice: "Your account has been deleted."
   end
 
   private
