@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def show
-    current_user = User.find(session[:user_id])
   end
   
   def new
@@ -12,10 +11,10 @@ class UsersController < ApplicationController
     # require 'pry'; binding.pry
 
     if @user.save
-      redirect_to profile_path(@user.id), notice: "Welcome, #{@user.full_name}! You have signed up successfully."
+      redirect_to user_path(@user.id), notice: "Welcome, #{@user.full_name}! You have signed up successfully."
       session[:user_id] = @user.id
     else
-      redirect_to new_user_registration_path, notice: "Account was not created successfully. Try again."
+      redirect_to new_user_path, notice: "Account was not created successfully. Try again."
     end
   end
 
